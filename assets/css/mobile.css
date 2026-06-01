@@ -1,0 +1,305 @@
+/* ============================================================
+   Project CREATE — Modular Mobile UI/UX Styles
+   Clean Separation: Desktop styling remains completely untouched.
+   ============================================================ */
+
+@media (max-width: 768px) {
+    /* ── Stabilize body scrolling on mobile menu open ───────── */
+    body.mobile-menu-active {
+        overflow: hidden !important;
+        touch-action: none;
+    }
+
+    /* ── Floating Bottom Navigation Dock ────────────────────── */
+    .mobile-nav-dock {
+        position: fixed;
+        bottom: 1.25rem;
+        left: 50%;
+        transform: translateX(-50%) translateY(0);
+        width: 92%;
+        max-width: 440px;
+        height: 4.25rem;
+        z-index: 100;
+        background: rgba(255, 254, 250, 0.88);
+        border: 1.5px solid rgba(254, 215, 170, 0.6); /* border-orange-200/60 */
+        box-shadow: 0 12px 32px -4px rgba(249, 115, 22, 0.15), 
+                    0 4px 12px -2px rgba(0, 0, 0, 0.05);
+        border-radius: 2rem;
+        backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0 0.5rem;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                    opacity 0.4s ease,
+                    visibility 0.4s;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /* Intelligent show/hide on scroll */
+    .mobile-nav-dock.dock-hidden {
+        transform: translateX(-50%) translateY(130%);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    /* Dock items & Touch Targets (Exactly 48px min size) */
+    .dock-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 3.25rem;
+        height: 3.25rem;
+        border-radius: 1rem;
+        color: #6b7280; /* text-gray-500 */
+        font-family: 'Fredoka', sans-serif;
+        font-size: 0.65rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.2s ease, transform 0.15s ease;
+        position: relative;
+        touch-action: manipulation;
+    }
+
+    .dock-item i {
+        font-size: 1.2rem;
+        margin-bottom: 0.15rem;
+        transition: transform 0.2s ease;
+    }
+
+    .dock-item:active {
+        transform: scale(0.92);
+    }
+
+    /* Active State Highlighter */
+    .dock-item.dock-active {
+        color: #f97316; /* text-create-orange */
+    }
+    
+    .dock-item.dock-active i {
+        transform: translateY(-2px);
+    }
+
+    /* Center prominent Action Button (Join / Rocket button) */
+    .dock-center-btn {
+        width: 3.75rem;
+        height: 3.75rem;
+        border-radius: 9999px;
+        background: linear-gradient(135deg, #f97316, #ef4444);
+        color: #ffffff;
+        box-shadow: 0 8px 20px rgba(249, 115, 22, 0.4);
+        transform: translateY(-0.75rem); /* Pop-out above dock */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                    box-shadow 0.2s ease;
+    }
+
+    .dock-center-btn i {
+        font-size: 1.35rem;
+        color: #ffffff;
+        margin-bottom: 0.05rem;
+    }
+
+    .dock-center-btn:active {
+        transform: translateY(-0.5rem) scale(0.95);
+        box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+    }
+
+    .dock-center-btn span {
+        font-size: 0.55rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+    }
+
+    /* ── Fullscreen Overlay Menu ─────────────────────────────── */
+    #mobile-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 150;
+        background: rgba(255, 254, 250, 0.94);
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        display: flex;
+        flex-direction: column;
+        padding: 6rem 2rem 2.5rem;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                    visibility 0.35s;
+    }
+
+    #mobile-overlay.active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    /* Close Button inside Overlay */
+    .overlay-close {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 9999px;
+        background: rgba(249, 115, 22, 0.1);
+        border: 1.5px solid rgba(249, 115, 22, 0.2);
+        color: #f97316;
+        font-size: 1.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .overlay-close:active {
+        transform: scale(0.9) rotate(90deg);
+        background: rgba(249, 115, 22, 0.2);
+    }
+
+    /* Staggered Cascading Animations */
+    .overlay-link {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-family: 'Fredoka', sans-serif;
+        font-size: 1.35rem;
+        font-weight: 600;
+        color: #374151; /* text-gray-700 */
+        padding: 0.875rem 1.25rem;
+        border-radius: 1.25rem;
+        transition: background 0.2s ease, color 0.2s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    .overlay-link i {
+        font-size: 1.25rem;
+        width: 1.75rem;
+        text-align: center;
+    }
+
+    .overlay-link:active {
+        background: rgba(249, 115, 22, 0.08);
+        color: #f97316;
+        transform: scale(0.97);
+    }
+
+    #mobile-overlay.active .overlay-link {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Delay utilities using CSS Custom Properties */
+    .overlay-link:nth-child(1) { transition-delay: 0.05s; }
+    .overlay-link:nth-child(2) { transition-delay: 0.10s; }
+    .overlay-link:nth-child(3) { transition-delay: 0.15s; }
+    .overlay-link:nth-child(4) { transition-delay: 0.20s; }
+    .overlay-link:nth-child(5) { transition-delay: 0.25s; }
+    .overlay-link:nth-child(6) { transition-delay: 0.30s; }
+
+    /* ── Horizontal Scroll-Snap Carousel ─────────────────────── */
+    .mobile-swipe-snap {
+        display: flex !important;
+        flex-direction: row !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 1.25rem !important;
+        padding-top: 0.5rem !important;
+        gap: 1.25rem !important;
+        width: 100% !important;
+    }
+
+    .mobile-swipe-snap > * {
+        flex: 0 0 82% !important; /* Peeking out effect */
+        max-width: 320px !important;
+        scroll-snap-align: center !important;
+        margin: 0 !important;
+    }
+
+    /* Hide default scrollbars for carousels */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none !important;
+    }
+    .no-scrollbar {
+        -ms-overflow-style: none !important;
+        scrollbar-width: none !important;
+    }
+
+    /* Swipe hint banner */
+    .swipe-hint {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.75rem;
+        color: #f97316;
+        background: rgba(249, 115, 22, 0.08);
+        border: 1px solid rgba(249, 115, 22, 0.15);
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        margin-top: -0.5rem;
+        margin-bottom: 1.5rem;
+        font-weight: 500;
+        animation: hint-bounce 2s infinite ease-in-out;
+    }
+
+    @keyframes hint-bounce {
+        0%, 100% { transform: translateX(0); }
+        50%       { transform: translateX(4px); }
+    }
+
+    /* Edge Fade Indicators for Scroll Lists */
+    .swipe-container {
+        position: relative;
+        width: 100%;
+    }
+
+    .swipe-container::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 40px;
+        background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,253,244,0.7) 100%);
+        pointer-events: none;
+        z-index: 10;
+        transition: opacity 0.35s ease;
+    }
+
+    .swipe-container.reached-end::after {
+        opacity: 0;
+    }
+
+    /* Adjust gradient for specific bg-colors */
+    #impact .swipe-container::after {
+        background: linear-gradient(to right, rgba(254,249,195,0) 0%, rgba(254,249,195,0.75) 100%);
+    }
+
+    #volunteers .swipe-container::after {
+        background: linear-gradient(to right, rgba(240,253,244,0) 0%, rgba(240,253,244,0.75) 100%);
+    }
+
+    /* ── Typewriter Layout Shift Fix ────────────────────────── */
+    #typewriter {
+        display: inline-block;
+        min-height: 2.25rem;
+        vertical-align: middle;
+    }
+
+    /* Offset main wrapper bottom margin to prevent Dock overlap with footer */
+    body {
+        padding-bottom: 5.5rem;
+    }
+}

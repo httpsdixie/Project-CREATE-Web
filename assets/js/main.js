@@ -5,6 +5,8 @@ import { initFadeIn, initStatCards } from './components/animations.js';
 import { initCounters } from './components/counters.js';
 import { initTypewriter, initSectionIndicator } from './components/hero.js';
 import { initLightbox } from './components/lightbox.js';
+import { initMobileDock } from './components/mobileDock.js';
+import { initMobileSwipe } from './components/mobileSwipe.js';
 
 /* ── Init all ───────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', function () {
@@ -19,4 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
     initTypewriter();
     initSectionIndicator();
     initLightbox();
+    initMobileDock();
+    initMobileSwipe();
 });

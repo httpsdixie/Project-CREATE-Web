@@ -3,6 +3,8 @@
    Theme: Warm, playful, child-friendly — matching the logo
    ============================================================ */
 
+@import './mobile.css';
+
 /* ── Gradient text ─────────────────────────────────────────── */
 .gradient-text {
     background: linear-gradient(to right, #ef4444, #f97316, #eab308, #22c55e, #3b82f6, #a855f7);
