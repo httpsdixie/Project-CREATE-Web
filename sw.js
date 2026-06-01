@@ -1,4 +1,4 @@
-const CACHE_NAME = 'project-create-v1';
+const CACHE_NAME = 'project-create-v2';
 const PRECACHE_ASSETS = [
     './',
     './index.html',

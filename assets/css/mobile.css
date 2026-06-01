@@ -322,6 +322,17 @@ html.dark body {
     color: #f4f4f5 !important;
 }
 
+/* Dynamic Edge Fade Indicators in Dark Mode */
+html.dark .swipe-container::after {
+    background: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%) !important;
+}
+html.dark #impact .swipe-container::after {
+    background: linear-gradient(to right, rgba(10,10,10,0) 0%, rgba(10,10,10,0.8) 100%) !important;
+}
+html.dark #volunteers .swipe-container::after {
+    background: linear-gradient(to right, rgba(23,23,23,0) 0%, rgba(23,23,23,0.8) 100%) !important;
+}
+
 /* Custom scrollbars in Dark Mode */
 html.dark ::-webkit-scrollbar-track {
     background: #000000;
