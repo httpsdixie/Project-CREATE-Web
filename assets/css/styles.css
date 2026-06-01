@@ -165,10 +165,14 @@ nav.scrolled { box-shadow: 0 4px 24px -4px rgba(0,0,0,0.10); }
 }
 .photo-slot:hover img { transform: scale(1.06); }
 
-/* Smaller row height on mobile */
+/* Smaller row height on mobile with resolution for cell height clashes */
 @media (max-width: 768px) {
     [style*="grid-auto-rows: 200px"] {
-        grid-auto-rows: 140px !important;
+        grid-auto-rows: 185px !important; /* Spacious height preventing squishing */
+        gap: 0.75rem !important; /* Compact gap */
+    }
+    .photo-slot {
+        min-height: auto !important; /* Prevent grid-cell clash */
     }
 }
 

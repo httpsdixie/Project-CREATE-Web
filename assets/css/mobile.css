@@ -302,6 +302,15 @@
     body {
         padding-bottom: 5.5rem;
     }
+
+    /* Position back-to-top above the bottom navigation dock to avoid overlap */
+    #back-to-top {
+        bottom: 6.25rem !important;
+        right: 1.25rem !important;
+        width: 3.25rem !important;
+        height: 3.25rem !important;
+        box-shadow: 0 4px 12px rgba(249,115,22,0.3) !important;
+    }
 }
 
 /* ============================================================
