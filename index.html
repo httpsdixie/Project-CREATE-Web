@@ -10,16 +10,16 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Project CREATE | Youth-Led Literacy Program">
     <meta property="og:description" content="Empowering children ages 8–13 in Ormoc City through guided reading, storytelling, and hands-on creative activities.">
-    <meta property="og:image" content="images/logo.png">
+    <meta property="og:image" content="images/logo.webp">
 
     <!-- Twitter / X Sharing Previews -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:title" content="Project CREATE | Youth-Led Literacy Program">
     <meta property="twitter:description" content="Empowering children ages 8–13 in Ormoc City through guided reading, storytelling, and hands-on creative activities.">
-    <meta property="twitter:image" content="images/logo.png">
+    <meta property="twitter:image" content="images/logo.webp">
 
     <!-- Apple Touch Device Icon Support -->
-    <link rel="apple-touch-icon" href="images/logo.png">
+    <link rel="apple-touch-icon" href="images/logo.webp">
 
     <!-- Content Security Policy: only load resources from trusted sources -->
     <meta http-equiv="Content-Security-Policy" content="
@@ -33,6 +33,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
@@ -58,7 +59,7 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="icon" type="image/png" href="favicon.png">
 </head>
-<body class="font-sans text-gray-800 antialiased overflow-x-hidden" style="background-color:#fffbeb;">
+<body class="font-sans text-gray-800 dark:text-neutral-100 bg-[#fffbeb] dark:bg-[#000000] antialiased overflow-x-hidden transition-colors duration-300">
 
 <!-- Scroll progress bar -->
 <div id="scroll-progress"></div>
@@ -68,16 +69,19 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-20 items-center">
             <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer" onclick="window.scrollTo(0,0)">
-                <img src="images/logo.png" alt="Project CREATE Logo" class="w-12 h-12 object-contain shadow-md rounded-full bg-white border-2 border-orange-100 p-0.5 transform hover:scale-105 transition-transform duration-300">
+                <img src="images/logo.webp" alt="Project CREATE Logo" class="w-12 h-12 object-contain shadow-md rounded-full bg-white border-2 border-orange-100 p-0.5 transform hover:scale-105 transition-transform duration-300">
                 <span class="font-display font-bold text-2xl tracking-wide gradient-text">Project CREATE</span>
             </div>
-            <div class="hidden md:flex space-x-6 items-center">
-                <a href="#about"      class="nav-link text-gray-600 hover:text-create-orange font-medium transition-colors font-display">About</a>
-                <a href="#impact"     class="nav-link text-gray-600 hover:text-create-orange font-medium transition-colors font-display">Impact</a>
-                <a href="#gallery"    class="nav-link text-gray-600 hover:text-create-orange font-medium transition-colors font-display">Gallery</a>
-                <a href="#volunteers" class="nav-link text-gray-600 hover:text-create-orange font-medium transition-colors font-display">Volunteers</a>
-                <a href="#partners"   class="nav-link text-gray-600 hover:text-create-orange font-medium transition-colors font-display">Partners</a>
-                <a href="#next" class="btn-bounce bg-create-orange text-white px-6 py-2.5 rounded-full font-display font-semibold shadow-lg shadow-orange-200">
+            <div class="hidden md:flex space-x-5 items-center">
+                <a href="#about"      class="nav-link text-gray-600 dark:text-gray-300 hover:text-create-orange dark:hover:text-create-orange font-medium transition-colors font-display">About</a>
+                <a href="#impact"     class="nav-link text-gray-600 dark:text-gray-300 hover:text-create-orange dark:hover:text-create-orange font-medium transition-colors font-display">Impact</a>
+                <a href="#gallery"    class="nav-link text-gray-600 dark:text-gray-300 hover:text-create-orange dark:hover:text-create-orange font-medium transition-colors font-display">Gallery</a>
+                <a href="#volunteers" class="nav-link text-gray-600 dark:text-gray-300 hover:text-create-orange dark:hover:text-create-orange font-medium transition-colors font-display">Volunteers</a>
+                <a href="#partners"   class="nav-link text-gray-600 dark:text-gray-300 hover:text-create-orange dark:hover:text-create-orange font-medium transition-colors font-display">Partners</a>
+                <button class="theme-toggle-btn p-2.5 rounded-xl text-gray-500 hover:bg-orange-50 dark:text-gray-400 dark:hover:bg-neutral-800 transition-colors mr-1 flex items-center justify-center" aria-label="Toggle dark mode">
+                    <i class="fa-solid fa-moon text-xl"></i>
+                </button>
+                <a href="#next" class="btn-bounce bg-create-orange text-white px-6 py-2.5 rounded-full font-display font-semibold shadow-lg shadow-orange-200 dark:shadow-none">
                     <i class="fa-solid fa-rocket mr-1.5"></i> Next Edition
                 </a>
             </div>
@@ -171,7 +175,7 @@
 
     <div class="wave-bottom">
         <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#ffffff"/>
+            <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" class="wave-fill-white" fill="#ffffff"/>
         </svg>
     </div>
 </section>
@@ -268,7 +272,7 @@
 
     <div class="wave-bottom">
         <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0,0 C480,60 960,0 1440,40 L1440,60 L0,60 Z" fill="#fef9c3"/>
+            <path d="M0,0 C480,60 960,0 1440,40 L1440,60 L0,60 Z" class="wave-fill-yellow" fill="#fef9c3"/>
         </svg>
     </div>
 </section>
@@ -386,7 +390,7 @@
 
     <div class="wave-bottom">
         <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0,40 C360,0 1080,60 1440,20 L1440,60 L0,60 Z" fill="#ffffff"/>
+            <path d="M0,40 C360,0 1080,60 1440,20 L1440,60 L0,60 Z" class="wave-fill-white" fill="#ffffff"/>
         </svg>
     </div>
 </section>
@@ -404,38 +408,38 @@
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 fade-in" style="grid-auto-rows: 200px;">
             <div class="photo-slot col-span-2 row-span-2 rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-shadow cursor-pointer group border-2 border-orange-200">
-                <img src="images/photo_9_2026-06-01_18-45-57.jpg" alt="Group photo of all Project CREATE participants and volunteers at Barangay Tambulilid Covered Court" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <img src="images/photo_9_2026-06-01_18-45-57.webp" alt="Group photo of all Project CREATE participants and volunteers at Barangay Tambulilid Covered Court" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             </div>
             <div class="photo-slot rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-shadow cursor-pointer group border-2 border-blue-200">
-                <img src="images/photo_1_2026-06-01_18-45-57.jpg" alt="Children participating in a Project CREATE reading activity" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <img src="images/photo_1_2026-06-01_18-45-57.webp" alt="Children participating in a Project CREATE reading activity" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             </div>
             <div class="photo-slot rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-shadow cursor-pointer group border-2 border-green-200">
-                <img src="images/photo_2_2026-06-01_18-45-57.jpg" alt="A volunteer facilitator working one-on-one with a child" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <img src="images/photo_2_2026-06-01_18-45-57.webp" alt="A volunteer facilitator working one-on-one with a child" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             </div>
             <div class="photo-slot rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-shadow cursor-pointer group border-2 border-purple-200">
-                <img src="images/photo_3_2026-06-01_18-45-57.jpg" alt="Children engaged in a creative art activity during Project CREATE" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <img src="images/photo_3_2026-06-01_18-45-57.webp" alt="Children engaged in a creative art activity during Project CREATE" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             </div>
             <div class="photo-slot rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-shadow cursor-pointer group border-2 border-red-200">
-                <img src="images/photo_4_2026-06-01_18-45-57.jpg" alt="Children working together on a hands-on learning activity" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <img src="images/photo_4_2026-06-01_18-45-57.webp" alt="Children working together on a hands-on learning activity" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             </div>
             <div class="photo-slot rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-shadow cursor-pointer group border-2 border-yellow-200">
-                <img src="images/photo_5_2026-06-01_18-45-57.jpg" alt="Volunteer reading to a group of children at Project CREATE" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <img src="images/photo_5_2026-06-01_18-45-57.webp" alt="Volunteer reading to a group of children at Project CREATE" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             </div>
             <div class="photo-slot rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-shadow cursor-pointer group border-2 border-indigo-200">
-                <img src="images/photo_6_2026-06-01_18-45-57.jpg" alt="A facilitator guiding children through an ice breaker game" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <img src="images/photo_6_2026-06-01_18-45-57.webp" alt="A facilitator guiding children through an ice breaker game" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             </div>
             <div class="photo-slot rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-shadow cursor-pointer group border-2 border-teal-200">
-                <img src="images/photo_7_2026-06-01_18-45-57.jpg" alt="Children and volunteers during the Project CREATE activity proper" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <img src="images/photo_7_2026-06-01_18-45-57.webp" alt="Children and volunteers during the Project CREATE activity proper" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             </div>
             <div class="photo-slot rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-shadow cursor-pointer group border-2 border-rose-200">
-                <img src="images/photo_8_2026-06-01_18-45-57.jpg" alt="Youth volunteers mentoring children in reading comprehension" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <img src="images/photo_8_2026-06-01_18-45-57.webp" alt="Youth volunteers mentoring children in reading comprehension" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             </div>
         </div>
     </div>
 
     <div class="wave-bottom">
         <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0,20 C480,60 960,0 1440,40 L1440,60 L0,60 Z" fill="#f0fdf4"/>
+            <path d="M0,20 C480,60 960,0 1440,40 L1440,60 L0,60 Z" class="wave-fill-green" fill="#f0fdf4"/>
         </svg>
     </div>
 </section>
@@ -466,7 +470,7 @@
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 max-w-5xl mx-auto justify-items-center mobile-swipe-snap no-scrollbar">
                 <div class="vol-card bg-white rounded-2xl p-5 text-center shadow-sm border-2 border-orange-100 fade-in" data-delay="1">
                     <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center mx-auto mb-3">
-                        <img src="images/LOGOS/VEST CLUB.jpg" alt="VEST Club logo" class="w-full h-full rounded-full object-contain p-1">
+                        <img src="images/LOGOS/VEST CLUB.webp" alt="VEST Club logo" class="w-full h-full rounded-full object-contain p-1">
                     </div>
                     <p class="font-display font-bold text-gray-800">VEST Club</p>
                     <p class="text-xs text-gray-400 mt-1">Lead Organizer</p>
@@ -530,7 +534,7 @@
 
     <div class="wave-bottom">
         <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0,40 C720,0 1080,60 1440,20 L1440,60 L0,60 Z" fill="#ffffff"/>
+            <path d="M0,40 C720,0 1080,60 1440,20 L1440,60 L0,60 Z" class="wave-fill-white" fill="#ffffff"/>
         </svg>
     </div>
 </section>
@@ -547,42 +551,42 @@
         <div class="swipe-container">
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 max-w-4xl mx-auto fade-in mobile-swipe-snap no-scrollbar">
                 <a href="https://www.facebook.com/profile.php?id=61584619143628" target="_blank" rel="noopener noreferrer" class="partner-card bg-amber-50 rounded-2xl p-5 flex flex-col items-center gap-3 border-2 border-amber-100 no-underline" data-delay="1">
-                    <img src="images/LOGOS/City Youth Development Council.jpg" alt="City Youth Development Council logo" class="w-11 h-11 rounded-full object-contain bg-white p-1">
+                    <img src="images/LOGOS/City Youth Development Council.webp" alt="City Youth Development Council logo" class="w-11 h-11 rounded-full object-contain bg-white p-1">
                     <p class="font-display font-bold text-gray-800 text-sm text-center">City Youth Development Council</p>
                     <span class="text-xs text-amber-600 flex items-center gap-1"><i class="fa-brands fa-facebook text-xs"></i> Visit page</span>
                 </a>
                 <a href="https://www.facebook.com/OrmocCityYDO" target="_blank" rel="noopener noreferrer" class="partner-card bg-green-50 rounded-2xl p-5 flex flex-col items-center gap-3 border-2 border-green-100 no-underline" data-delay="2">
-                    <img src="images/LOGOS/City Youth Development Office.jpg" alt="City Youth Development Office logo" class="w-11 h-11 rounded-full object-contain bg-white p-1">
+                    <img src="images/LOGOS/City Youth Development Office.webp" alt="City Youth Development Office logo" class="w-11 h-11 rounded-full object-contain bg-white p-1">
                     <p class="font-display font-bold text-gray-800 text-sm text-center">City Youth Development Office</p>
                     <span class="text-xs text-green-600 flex items-center gap-1"><i class="fa-brands fa-facebook text-xs"></i> Visit page</span>
                 </a>
                 <a href="https://www.facebook.com/OrmocVMCO?__tn__=-UC*F" target="_blank" rel="noopener noreferrer" class="partner-card bg-purple-50 rounded-2xl p-5 flex flex-col items-center gap-3 border-2 border-purple-100 no-underline" data-delay="3">
-                    <img src="images/LOGOS/Volunteer Management & Coordination Office.jpg" alt="VMCO logo" class="w-11 h-11 rounded-full object-contain bg-white p-1">
+                    <img src="images/LOGOS/Volunteer Management & Coordination Office.webp" alt="VMCO logo" class="w-11 h-11 rounded-full object-contain bg-white p-1">
                     <p class="font-display font-bold text-gray-800 text-sm text-center">Volunteer Management Coordination Office </p>
                     <span class="text-xs text-purple-600 flex items-center gap-1"><i class="fa-brands fa-facebook text-xs"></i> Visit page</span>
                 </a>
                 <a href="https://www.facebook.com/profile.php?id=61578199766616" target="_blank" rel="noopener noreferrer" class="partner-card bg-yellow-50 rounded-2xl p-5 flex flex-col items-center gap-3 border-2 border-yellow-100 no-underline" data-delay="4">
-                    <img src="images/LOGOS/Sangguniang Kabataan - Brgy. Tambulilid.jpg" alt="Sangguniang Kabataan logo" class="w-11 h-11 rounded-full object-contain bg-white p-1">
+                    <img src="images/LOGOS/Sangguniang Kabataan - Brgy. Tambulilid.webp" alt="Sangguniang Kabataan logo" class="w-11 h-11 rounded-full object-contain bg-white p-1">
                     <p class="font-display font-bold text-gray-800 text-sm text-center">Sangguniang Kabataan Federation</p>
                     <span class="text-xs text-yellow-600 flex items-center gap-1"><i class="fa-brands fa-facebook text-xs"></i> Visit page</span>
                 </a>
                 <a href="https://www.facebook.com/sktambulilidormoc" target="_blank" rel="noopener noreferrer" class="partner-card bg-orange-50 rounded-2xl p-5 flex flex-col items-center gap-3 border-2 border-orange-100 no-underline" data-delay="5">
-                    <img src="images/LOGOS/Sangguniang Kabataan - Brgy. Tambulilid.jpg" alt="SK of Barangay Tambulilid logo" class="w-11 h-11 rounded-full object-contain bg-white p-1">
+                    <img src="images/LOGOS/Sangguniang Kabataan - Brgy. Tambulilid.webp" alt="SK of Barangay Tambulilid logo" class="w-11 h-11 rounded-full object-contain bg-white p-1">
                     <p class="font-display font-bold text-gray-800 text-sm text-center">SK of Barangay Tambulilid</p>
                     <span class="text-xs text-orange-600 flex items-center gap-1"><i class="fa-brands fa-facebook text-xs"></i> Visit page</span>
                 </a>
                 <a href="https://www.facebook.com/sktambulilidormoc" target="_blank" rel="noopener noreferrer" class="partner-card bg-red-50 rounded-2xl p-5 flex flex-col items-center gap-3 border-2 border-red-100 no-underline" data-delay="6">
-                    <img src="images/LOGOS/Sangguniang Kabataan - Brgy. Tambulilid.jpg" alt="Sangguniang Kabataan logo" class="w-11 h-11 rounded-full object-contain bg-white p-1">
+                    <img src="images/LOGOS/Sangguniang Kabataan - Brgy. Tambulilid.webp" alt="Sangguniang Kabataan logo" class="w-11 h-11 rounded-full object-contain bg-white p-1">
                     <p class="font-display font-bold text-gray-800 text-sm text-center">Sangguniang Barangay of Barangay Tambulilid</p>
                     <span class="text-xs text-red-600 flex items-center gap-1"><i class="fa-brands fa-facebook text-xs"></i> Visit page</span>
                 </a>
                 <a href="https://www.facebook.com/profile.php?id=61575828553894" target="_blank" rel="noopener noreferrer" class="partner-card bg-teal-50 rounded-2xl p-5 flex flex-col items-center gap-3 border-2 border-teal-100 no-underline" data-delay="5">
-                    <img src="images/LOGOS/Ormoc City Academic Scholars' Association.jpg" alt="OCASA logo" class="w-11 h-11 rounded-full object-contain bg-white p-1">
+                    <img src="images/LOGOS/Ormoc City Academic Scholars' Association.webp" alt="OCASA logo" class="w-11 h-11 rounded-full object-contain bg-white p-1">
                     <p class="font-display font-bold text-gray-800 text-sm text-center">Ormoc City Academic Scholars Association</p>
                     <span class="text-xs text-teal-600 flex items-center gap-1"><i class="fa-brands fa-facebook text-xs"></i> Visit page</span>
                 </a>
                 <a href="https://www.facebook.com/LMSCOfficial" target="_blank" rel="noopener noreferrer" class="partner-card bg-blue-50 rounded-2xl p-5 flex flex-col items-center gap-3 border-2 border-blue-100 no-underline" data-delay="6">
-                    <img src="images/LOGOS/Linao Multimedia Society Club (LMSC).jpg" alt="LMSC logo" class="w-11 h-11 rounded-full object-contain bg-white p-1">
+                    <img src="images/LOGOS/Linao Multimedia Society Club (LMSC).webp" alt="LMSC logo" class="w-11 h-11 rounded-full object-contain bg-white p-1">
                     <p class="font-display font-bold text-gray-800 text-sm text-center">Linao Multimedia Society Club   </p>
                     <span class="text-xs text-blue-600 flex items-center gap-1"><i class="fa-brands fa-facebook text-xs"></i> Visit page</span>
                 </a>
@@ -654,7 +658,7 @@
 
             <div class="flex flex-col items-center md:items-start fade-in">
                 <div class="flex items-center gap-3 mb-4">
-                    <img src="images/logo.png" alt="Project CREATE Logo" class="w-11 h-11 object-contain shadow-lg rounded-full bg-white border-2 border-orange-100 p-0.5">
+                    <img src="images/logo.webp" alt="Project CREATE Logo" class="w-11 h-11 object-contain shadow-lg rounded-full bg-white border-2 border-orange-100 p-0.5">
                     <span class="font-display font-bold text-2xl tracking-wide gradient-text">Project CREATE</span>
                 </div>
                 <p class="text-gray-400 text-sm max-w-xs leading-relaxed mb-3">
@@ -735,9 +739,14 @@
     <button id="overlay-close-btn" class="overlay-close" aria-label="Close menu">
         <i class="fa-solid fa-xmark"></i>
     </button>
-    <div class="flex items-center gap-3 mb-8 border-b border-orange-100 pb-5">
-        <img src="images/logo.png" alt="Project CREATE Logo" class="w-11 h-11 object-contain shadow-md rounded-full bg-white border border-orange-200 p-0.5">
-        <span class="font-display font-bold text-2xl tracking-wide gradient-text">Project CREATE</span>
+    <div class="flex items-center justify-between border-b border-orange-100 dark:border-neutral-800 pb-5 mb-8">
+        <div class="flex items-center gap-3">
+            <img src="images/logo.webp" alt="Project CREATE Logo" class="w-11 h-11 object-contain shadow-md rounded-full bg-white border border-orange-200 p-0.5">
+            <span class="font-display font-bold text-2xl tracking-wide gradient-text">Project CREATE</span>
+        </div>
+        <button class="theme-toggle-btn p-2.5 rounded-xl text-gray-500 hover:bg-orange-50 dark:text-gray-400 dark:hover:bg-neutral-800 transition-colors mr-14 flex items-center justify-center" aria-label="Toggle dark mode">
+            <i class="fa-solid fa-moon text-xl"></i>
+        </button>
     </div>
     <nav class="flex flex-col gap-2.5">
         <a href="#about"      class="overlay-link"><i class="fa-solid fa-book-open text-create-purple"></i> About the Program</a>

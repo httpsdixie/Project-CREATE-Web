@@ -303,3 +303,72 @@
         padding-bottom: 5.5rem;
     }
 }
+
+/* ============================================================
+   OLED Dark Mode Styles (Applies to both Mobile & Desktop)
+   ============================================================ */
+
+html.dark body {
+    background-color: #000000 !important;
+    color: #f4f4f5 !important;
+}
+
+/* Custom scrollbars in Dark Mode */
+html.dark ::-webkit-scrollbar-track {
+    background: #000000;
+}
+html.dark ::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #ef4444, #f97316, #eab308, #22c55e, #3b82f6, #a855f7);
+    border: 2px solid #000000;
+}
+html.dark * {
+    scrollbar-color: #f97316 #000000;
+}
+
+/* Wave fills in Dark Mode */
+html.dark .wave-fill-white { fill: #0a0a0a !important; }
+html.dark .wave-fill-yellow { fill: #171717 !important; }
+html.dark .wave-fill-green { fill: #171717 !important; }
+
+/* Sticky Navbar dark mode background */
+html.dark nav {
+    background-color: rgba(0, 0, 0, 0.92) !important;
+    border-color: #18181b !important;
+    box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Custom Conic Sunburst in Dark Mode */
+html.dark .hero-sunburst {
+    background-color: #050505 !important;
+    background-image: 
+        radial-gradient(circle at 50% 110%, #1e1b4b 0%, #000000 80%) !important;
+}
+
+/* Floating bottom dock dark styling */
+@media (max-width: 768px) {
+    html.dark .mobile-nav-dock {
+        background: rgba(10, 10, 10, 0.9) !important;
+        border-color: rgba(63, 63, 70, 0.4) !important;
+        box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.6) !important;
+    }
+    
+    html.dark .dock-item {
+        color: #9ca3af !important;
+    }
+    
+    html.dark .dock-item.dock-active {
+        color: #f97316 !important;
+    }
+    
+    html.dark #mobile-overlay {
+        background: rgba(10, 10, 10, 0.95) !important;
+    }
+    
+    html.dark .overlay-link {
+        color: #e5e7eb !important;
+    }
+    
+    html.dark .overlay-close {
+        background: rgba(249, 115, 22, 0.15) !important;
+    }
+}
