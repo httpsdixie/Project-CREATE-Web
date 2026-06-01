@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project CREATE | Youth-Led Literacy Program</title>
+    <meta name="description" content="Project CREATE is a youth-led community literacy program by VEST Club, empowering children ages 8–13 in Ormoc City through the Read-Create Approach — guided reading, storytelling, and hands-on creative activities.">
+    
+    <!-- Open Graph / Facebook Sharing Previews -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Project CREATE | Youth-Led Literacy Program">
+    <meta property="og:description" content="Empowering children ages 8–13 in Ormoc City through guided reading, storytelling, and hands-on creative activities.">
+    <meta property="og:image" content="images/logo.png">
+
+    <!-- Twitter / X Sharing Previews -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Project CREATE | Youth-Led Literacy Program">
+    <meta property="twitter:description" content="Empowering children ages 8–13 in Ormoc City through guided reading, storytelling, and hands-on creative activities.">
+    <meta property="twitter:image" content="images/logo.png">
+
+    <!-- Apple Touch Device Icon Support -->
+    <link rel="apple-touch-icon" href="images/logo.png">
+
+    <!-- Content Security Policy: only load resources from trusted sources -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src  'self' 'unsafe-inline' https://cdn.tailwindcss.com;
+        style-src   'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
+        font-src    'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+        img-src     'self' data:;
+        connect-src 'none';
+    ">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans:    ['Poppins', 'sans-serif'],
+                        display: ['Fredoka', 'sans-serif'],
+                    },
+                    colors: {
+                        create: {
+                            red:    '#ef4444',
+                            orange: '#f97316',
+                            green:  '#22c55e',
+                            blue:   '#3b82f6',
+                            purple: '#a855f7',
+                            yellow: '#eab308'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body class="font-sans text-gray-800 antialiased overflow-x-hidden" style="background-color:#fffbeb;">
+
+<!-- Scroll progress bar -->
+<div id="scroll-progress"></div>
+
+<!-- ===================== NAVIGATION ===================== -->
+<nav class="bg-white/95 backdrop-blur-md shadow-sm fixed w-full z-50 top-0 transition-all border-b-2 border-orange-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-20 items-center">
+            <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer" onclick="window.scrollTo(0,0)">
+                <img src="images/logo.png" alt="Project CREATE Logo" class="w-12 h-12 object-contain shadow-md rounded-full bg-white border-2 border-orange-100 p-0.5 transform hover:scale-105 transition-transform duration-300">
+                <span class="font-display font-bold text-2xl tracking-wide gradient-text">Project CREATE</span>
+            </div>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="#about"      class="nav-link text-gray-600 hover:text-create-orange font-medium transition-colors font-display">About</a>
+                <a href="#impact"     class="nav-link text-gray-600 hover:text-create-orange font-medium transition-colors font-display">Impact</a>
+                <a href="#gallery"    class="nav-link text-gray-600 hover:text-create-orange font-medium transition-colors font-display">Gallery</a>
+                <a href="#volunteers" class="nav-link text-gray-600 hover:text-create-orange font-medium transition-colors font-display">Volunteers</a>
+                <a href="#partners"   class="nav-link text-gray-600 hover:text-create-orange font-medium transition-colors font-display">Partners</a>
+                <a href="#next" class="btn-bounce bg-create-orange text-white px-6 py-2.5 rounded-full font-display font-semibold shadow-lg shadow-orange-200">
+                    <i class="fa-solid fa-rocket mr-1.5"></i> Next Edition
+                </a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-btn" class="text-gray-600 p-2 rounded-xl hover:bg-orange-50 transition-colors" aria-label="Open menu" aria-expanded="false">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t-2 border-orange-100">
+        <div class="px-4 pt-3 pb-6 space-y-1 flex flex-col">
+            <a href="#about"      class="block px-4 py-2.5 font-display font-medium text-gray-700 hover:bg-orange-50 hover:text-create-orange rounded-xl transition-colors"><i class="fa-solid fa-book-open w-5 mr-2 text-create-purple"></i>About</a>
+            <a href="#impact"     class="block px-4 py-2.5 font-display font-medium text-gray-700 hover:bg-orange-50 hover:text-create-orange rounded-xl transition-colors"><i class="fa-solid fa-star w-5 mr-2 text-create-yellow"></i>Impact</a>
+            <a href="#gallery"    class="block px-4 py-2.5 font-display font-medium text-gray-700 hover:bg-orange-50 hover:text-create-orange rounded-xl transition-colors"><i class="fa-solid fa-images w-5 mr-2 text-create-blue"></i>Gallery</a>
+            <a href="#volunteers" class="block px-4 py-2.5 font-display font-medium text-gray-700 hover:bg-orange-50 hover:text-create-orange rounded-xl transition-colors"><i class="fa-solid fa-people-group w-5 mr-2 text-create-green"></i>Volunteers</a>
+            <a href="#partners"   class="block px-4 py-2.5 font-display font-medium text-gray-700 hover:bg-orange-50 hover:text-create-orange rounded-xl transition-colors"><i class="fa-solid fa-handshake w-5 mr-2 text-create-orange"></i>Partners</a>
+            <a href="#next"       class="block px-4 py-2.5 font-display font-semibold text-white bg-create-orange rounded-xl text-center mt-2"><i class="fa-solid fa-rocket mr-1.5"></i>Next Edition</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<section class="relative pt-32 pb-40 lg:pt-48 lg:pb-48 overflow-hidden hero-sunburst">
+
+    <!-- Floating decorative icons (FA, not emojis) -->
+    <span class="deco float-a text-create-red"    style="top:12%;left:4%;"   aria-hidden="true"><i class="fa-solid fa-star text-3xl"></i></span>
+    <span class="deco float-b text-create-blue"   style="top:20%;left:10%;"  aria-hidden="true"><i class="fa-solid fa-book-open text-2xl"></i></span>
+    <span class="deco float-c text-create-purple" style="top:8%;right:6%;"   aria-hidden="true"><i class="fa-solid fa-wand-magic-sparkles text-2xl"></i></span>
+    <span class="deco float-a text-create-yellow" style="top:30%;right:4%;"  aria-hidden="true"><i class="fa-solid fa-sun text-3xl"></i></span>
+    <span class="deco float-b text-create-green"  style="bottom:22%;left:6%;" aria-hidden="true"><i class="fa-solid fa-seedling text-2xl"></i></span>
+    <span class="deco float-c text-create-orange" style="bottom:16%;right:8%;" aria-hidden="true"><i class="fa-solid fa-palette text-2xl"></i></span>
+    <span class="deco spin-slow text-create-yellow opacity-30" style="top:15%;left:50%;" aria-hidden="true"><i class="fa-solid fa-asterisk text-xl"></i></span>
+    <span class="deco float-a text-create-red"    style="top:55%;left:2%;"   aria-hidden="true"><i class="fa-solid fa-heart text-xl"></i></span>
+    <span class="deco float-b text-create-blue"   style="top:50%;right:2%;"  aria-hidden="true"><i class="fa-solid fa-pencil text-xl"></i></span>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center max-w-4xl mx-auto">
+
+            <div class="flex flex-wrap justify-center gap-3 mb-6 hero-animate">
+                <span class="inline-flex items-center gap-1.5 py-1.5 px-4 rounded-full bg-green-100 text-green-700 font-semibold text-sm border-2 border-green-200 shadow-sm font-display">
+                    <i class="fa-solid fa-circle-check"></i> First Edition — May 2026 · Completed
+                </span>
+                <span class="inline-flex items-center gap-1.5 py-1.5 px-4 rounded-full bg-orange-100 text-create-orange font-semibold text-sm border-2 border-orange-200 shadow-sm font-display">
+                    <i class="fa-solid fa-star"></i> For the Youth, By the Youth, With the Youth
+                </span>
+            </div>
+
+            <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold mb-5 text-gray-900 leading-tight hero-animate">
+                Welcome to <br><span class="gradient-text">Project CREATE!</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-amber-800 mb-4 font-display font-medium hero-animate">
+                Creative Reflection and Expression through <span id="typewriter"></span>
+            </p>
+            <p class="text-base text-amber-700 mb-10 max-w-2xl mx-auto hero-animate leading-relaxed">
+                A community-based literacy program by <strong class="text-gray-800">VEST Club</strong>, empowering children ages 8–13 through the <strong class="text-gray-800">Read-Create Approach</strong> — guided reading, storytelling, and hands-on creative activities.
+            </p>
+
+            <!-- Info cards -->
+            <div class="flex flex-wrap justify-center gap-4 mb-10 hero-animate">
+                <div class="flex items-center gap-3 bg-white px-5 py-3 rounded-2xl shadow-md border-l-4 border-create-red">
+                    <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-create-red flex-shrink-0">
+                        <i class="fa-regular fa-calendar text-lg"></i>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-xs text-gray-400 font-bold uppercase tracking-wide">First Run</p>
+                        <p class="font-display font-semibold text-gray-800">May 25–29, 2026</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 bg-white px-5 py-3 rounded-2xl shadow-md border-l-4 border-create-blue">
+                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-create-blue flex-shrink-0">
+                        <i class="fa-solid fa-location-dot text-lg"></i>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-xs text-gray-400 font-bold uppercase tracking-wide">Location</p>
+                        <p class="font-display font-semibold text-gray-800">Ormoc City, Leyte</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 bg-white px-5 py-3 rounded-2xl shadow-md border-l-4 border-create-green">
+                    <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-create-green flex-shrink-0">
+                        <i class="fa-solid fa-children text-lg"></i>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-xs text-gray-400 font-bold uppercase tracking-wide">Participants</p>
+                        <p class="font-display font-semibold text-gray-800">Children Ages 8–13</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-4 hero-animate">
+                <a href="#gallery" class="btn-bounce inline-flex items-center gap-2 px-8 py-4 text-lg font-display font-bold text-white bg-create-orange rounded-full shadow-xl shadow-orange-200">
+                    <i class="fa-solid fa-images"></i> See the Highlights
+                </a>
+                <a href="#next" class="btn-bounce inline-flex items-center gap-2 px-8 py-4 text-lg font-display font-bold text-create-orange bg-white border-2 border-create-orange rounded-full shadow-md">
+                    <i class="fa-solid fa-rocket"></i> Next Edition
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="wave-bottom">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#ffffff"/>
+        </svg>
+    </div>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section id="about" class="py-24 pb-32 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 fade-in">
+            <span class="section-eyebrow bg-purple-100 text-create-purple border-2 border-purple-200">
+                <i class="fa-solid fa-book-open-reader"></i> The Program
+            </span>
+            <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-4">About Project CREATE</h2>
+            <p class="text-xl text-gray-500 max-w-2xl mx-auto">A community-based literacy initiative guided by the Read-Create Approach.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+            <!-- Left card -->
+            <div class="bg-gradient-to-br from-purple-50 to-indigo-50 p-8 md:p-12 rounded-[2.5rem] shadow-lg relative overflow-hidden card-hover fade-in border-2 border-purple-100">
+                <div class="absolute -top-6 -right-6 text-purple-200 opacity-30 text-9xl pointer-events-none">
+                    <i class="fa-solid fa-book-open-reader"></i>
+                </div>
+                <h3 class="font-display text-3xl font-bold text-gray-900 mb-6 relative z-10">
+                    What is <span class="text-create-purple">Project CREATE?</span>
+                </h3>
+                <div class="space-y-4 text-gray-700 relative z-10 leading-relaxed">
+                    <p class="font-semibold text-lg text-gray-800">
+                        Project CREATE is a community-based literacy program that promotes reading comprehension, creativity, and reflective learning among children through the <span class="text-create-purple font-bold">Read-Create Approach</span>.
+                    </p>
+                    <p>
+                        Led by youth volunteers of the <strong>VEST Club (Values Education and Spiritual Transformation Club)</strong>, the program serves children aged 8–13 in communities across Ormoc City — using storytelling, guided reading, and hands-on creative activities to build confidence and a genuine love for learning.
+                    </p>
+                    <p>
+                        Young volunteers serve as <strong>mentors, reading partners, and facilitators</strong>, living out the principle: <em>"For the Youth, By the Youth, With the Youth."</em>
+                    </p>
+                    <blockquote class="italic text-gray-600 border-l-4 border-create-yellow pl-4 bg-yellow-50 py-2 rounded-r-xl">
+                        <i class="fa-solid fa-quote-left text-create-yellow mr-1"></i>
+                        "Train up a child in the way he should go." — Proverbs 22:6
+                    </blockquote>
+                    <blockquote class="italic text-gray-600 border-l-4 border-create-orange pl-4 bg-orange-50 py-2 rounded-r-xl">
+                        <i class="fa-solid fa-quote-left text-create-orange mr-1"></i>
+                        "Education is the most powerful weapon which you can use to change the world." — Nelson Mandela
+                    </blockquote>
+                </div>
+            </div>
+
+            <!-- Right -->
+            <div class="pt-4 fade-in">
+                <h3 class="font-display text-3xl font-bold text-gray-900 mb-6">Why Functional Literacy Matters</h3>
+                <p class="text-gray-600 mb-4 leading-relaxed">
+                    While the Philippines has a basic literacy rate of about <strong>93%</strong>, functional literacy sits lower at around <strong>70–75%</strong> based on the 2019 FLEMMS by the PSA. Many can read and write, but still struggle with comprehension, critical thinking, and applying what they read in real life.
+                </p>
+                <p class="text-gray-600 mb-8 leading-relaxed">
+                    That gap is where volunteer action becomes important. Children learn better through interactive and creative methods — storytelling, guided reading, and hands-on activities — which are the core of Project CREATE.
+                </p>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="pillar-card bg-orange-50 p-5 rounded-2xl text-center border-2 border-orange-100 fade-in" data-delay="1">
+                        <div class="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center mx-auto mb-3">
+                            <i class="fa-solid fa-hand-holding-heart text-2xl text-create-orange"></i>
+                        </div>
+                        <h4 class="font-display font-bold text-gray-900">Youth-Led</h4>
+                        <p class="text-sm text-gray-500 mt-1">Volunteers as mentors & reading partners</p>
+                    </div>
+                    <div class="pillar-card bg-green-50 p-5 rounded-2xl text-center border-2 border-green-100 fade-in" data-delay="2">
+                        <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-3">
+                            <i class="fa-solid fa-palette text-2xl text-create-green"></i>
+                        </div>
+                        <h4 class="font-display font-bold text-gray-900">Creative</h4>
+                        <p class="text-sm text-gray-500 mt-1">Art, Tales & Experiences</p>
+                    </div>
+                    <div class="pillar-card bg-blue-50 p-5 rounded-2xl text-center border-2 border-blue-100 fade-in" data-delay="3">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-3">
+                            <i class="fa-solid fa-book-open text-2xl text-create-blue"></i>
+                        </div>
+                        <h4 class="font-display font-bold text-gray-900">Read-Create</h4>
+                        <p class="text-sm text-gray-500 mt-1">Guided reading + reflective activities</p>
+                    </div>
+                    <div class="pillar-card bg-purple-50 p-5 rounded-2xl text-center border-2 border-purple-100 fade-in" data-delay="4">
+                        <div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mx-auto mb-3">
+                            <i class="fa-solid fa-people-group text-2xl text-create-purple"></i>
+                        </div>
+                        <h4 class="font-display font-bold text-gray-900">Community</h4>
+                        <p class="text-sm text-gray-500 mt-1">Shared responsibility & volunteerism</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wave-bottom">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,0 C480,60 960,0 1440,40 L1440,60 L0,60 Z" fill="#fef9c3"/>
+        </svg>
+    </div>
+</section>
+
+<!-- ===================== IMPACT ===================== -->
+<section id="impact" class="py-24 pb-32 relative" style="background-color:#fef9c3;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-14 fade-in">
+            <span class="section-eyebrow bg-green-100 text-green-700 border-2 border-green-200">
+                <i class="fa-solid fa-circle-check"></i> First Edition · May 2026
+            </span>
+            <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Impact</h2>
+            <p class="text-xl text-amber-800 max-w-2xl mx-auto">Five days. One community. Dozens of young readers whose love for learning was sparked.</p>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+            <div class="stat-card bg-white rounded-3xl p-6 text-center shadow-md border-b-4 border-create-red card-hover">
+                <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center mx-auto mb-3">
+                    <i class="fa-regular fa-calendar-days text-2xl text-create-red"></i>
+                </div>
+                <p class="font-display text-4xl md:text-5xl font-bold text-create-red mb-1" data-count="5" data-final="5">5</p>
+                <p class="text-gray-600 font-medium">Days of Activities</p>
+            </div>
+            <div class="stat-card bg-white rounded-3xl p-6 text-center shadow-md border-b-4 border-create-blue card-hover">
+                <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-3">
+                    <i class="fa-solid fa-children text-2xl text-create-blue"></i>
+                </div>
+                <p class="font-display text-4xl md:text-5xl font-bold text-create-blue mb-1">8–13</p>
+                <p class="text-gray-600 font-medium">Age Range Served</p>
+            </div>
+            <div class="stat-card bg-white rounded-3xl p-6 text-center shadow-md border-b-4 border-create-green card-hover">
+                <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-3">
+                    <i class="fa-solid fa-people-group text-2xl text-create-green"></i>
+                </div>
+                <p class="font-display text-4xl md:text-5xl font-bold text-create-green mb-1" data-count="5" data-final="5+">5+</p>
+                <p class="text-gray-600 font-medium">Volunteer Organizations</p>
+            </div>
+            <div class="stat-card bg-white rounded-3xl p-6 text-center shadow-md border-b-4 border-create-purple card-hover">
+                <div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mx-auto mb-3">
+                    <i class="fa-solid fa-handshake text-2xl text-create-purple"></i>
+                </div>
+                <p class="font-display text-4xl md:text-5xl font-bold text-create-purple mb-1" data-count="8" data-final="8+">8+</p>
+                <p class="text-gray-600 font-medium">Partner Organizations</p>
+            </div>
+        </div>
+
+        <!-- Schedule cards -->
+        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div class="bg-white rounded-3xl p-8 shadow-md border-t-8 border-create-blue card-hover fade-in">
+                <div class="flex items-center justify-between mb-6 flex-wrap gap-2">
+                    <h3 class="font-display text-2xl font-bold text-gray-900">
+                        <i class="fa-solid fa-chalkboard-user text-create-blue mr-2"></i>Training of Trainers
+                    </h3>
+                    <span class="bg-blue-100 text-create-blue text-xs font-display font-bold px-3 py-1 rounded-full uppercase tracking-wider">Facilitators</span>
+                </div>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-11 h-11 rounded-full bg-blue-50 flex items-center justify-center text-create-blue">
+                            <i class="fa-regular fa-calendar-check text-lg"></i>
+                        </div>
+                        <div><p class="text-xs font-bold text-gray-400 uppercase">Date</p><p class="font-medium text-gray-900">May 25–26, 2026 (Mon–Tue)</p></div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-11 h-11 rounded-full bg-blue-50 flex items-center justify-center text-create-blue">
+                            <i class="fa-regular fa-clock text-lg"></i>
+                        </div>
+                        <div><p class="text-xs font-bold text-gray-400 uppercase">Time</p><p class="font-medium text-gray-900">8:00 AM – 12:00 NN</p></div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-11 h-11 rounded-full bg-blue-50 flex items-center justify-center text-create-blue">
+                            <i class="fa-solid fa-map-pin text-lg"></i>
+                        </div>
+                        <div><p class="text-xs font-bold text-gray-400 uppercase">Venue</p><p class="font-medium text-gray-900">DepEd Ormoc City Division Training Hall</p></div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-white rounded-3xl p-8 shadow-md border-t-8 border-create-red card-hover fade-in relative overflow-hidden">
+                <i class="fa-solid fa-star absolute -bottom-4 -right-4 text-red-50 text-8xl rotate-12 pointer-events-none"></i>
+                <div class="flex items-center justify-between mb-6 flex-wrap gap-2 relative z-10">
+                    <h3 class="font-display text-2xl font-bold text-gray-900">
+                        <i class="fa-solid fa-children text-create-red mr-2"></i>Activity Proper
+                    </h3>
+                    <span class="bg-red-100 text-create-red text-xs font-display font-bold px-3 py-1 rounded-full uppercase tracking-wider">Kids & Community</span>
+                </div>
+                <ul class="space-y-4 relative z-10">
+                    <li class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-11 h-11 rounded-full bg-red-50 flex items-center justify-center text-create-red">
+                            <i class="fa-regular fa-calendar-check text-lg"></i>
+                        </div>
+                        <div><p class="text-xs font-bold text-gray-400 uppercase">Date</p><p class="font-medium text-gray-900">May 27–29, 2026 (Wed–Fri)</p></div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-11 h-11 rounded-full bg-red-50 flex items-center justify-center text-create-red">
+                            <i class="fa-regular fa-clock text-lg"></i>
+                        </div>
+                        <div><p class="text-xs font-bold text-gray-400 uppercase">Time</p><p class="font-medium text-gray-900">1:00 PM – 5:00 PM</p></div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-11 h-11 rounded-full bg-red-50 flex items-center justify-center text-create-red">
+                            <i class="fa-solid fa-map-pin text-lg"></i>
+                        </div>
+                        <div><p class="text-xs font-bold text-gray-400 uppercase">Venue</p><p class="font-medium text-gray-900">Brgy. Tambulilid Covered Court, Ormoc City <span class="text-xs text-gray-400">(1st Edition)</span></p></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="wave-bottom">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,40 C360,0 1080,60 1440,20 L1440,60 L0,60 Z" fill="#ffffff"/>
+        </svg>
+    </div>
+</section>
+
+<!-- ===================== GALLERY ===================== -->
+<section id="gallery" class="py-24 pb-32 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-14 fade-in">
+            <span class="section-eyebrow bg-orange-100 text-create-orange border-2 border-orange-200">
+                <i class="fa-solid fa-images"></i> Photos with Consent
+            </span>
+            <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-4">Moments from the Field</h2>
+            <p class="text-xl text-gray-500 max-w-2xl mx-auto">A glimpse of what happened when youth volunteers and young readers came together.</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 fade-in" style="grid-auto-rows: 200px;">
+            <div class="photo-slot col-span-2 row-span-2 rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-shadow cursor-pointer group border-2 border-orange-200">
+                <img src="images/photo_9_2026-06-01_18-45-57.jpg" alt="Group photo of all Project CREATE participants and volunteers at Barangay Tambulilid Covered Court" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="photo-slot rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-shadow cursor-pointer group border-2 border-blue-200">
+                <img src="images/photo_1_2026-06-01_18-45-57.jpg" alt="Children participating in a Project CREATE reading activity" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="photo-slot rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-shadow cursor-pointer group border-2 border-green-200">
+                <img src="images/photo_2_2026-06-01_18-45-57.jpg" alt="A volunteer facilitator working one-on-one with a child" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="photo-slot rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-shadow cursor-pointer group border-2 border-purple-200">
+                <img src="images/photo_3_2026-06-01_18-45-57.jpg" alt="Children engaged in a creative art activity during Project CREATE" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="photo-slot rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-shadow cursor-pointer group border-2 border-red-200">
+                <img src="images/photo_4_2026-06-01_18-45-57.jpg" alt="Children working together on a hands-on learning activity" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="photo-slot rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-shadow cursor-pointer group border-2 border-yellow-200">
+                <img src="images/photo_5_2026-06-01_18-45-57.jpg" alt="Volunteer reading to a group of children at Project CREATE" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="photo-slot rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-shadow cursor-pointer group border-2 border-indigo-200">
+                <img src="images/photo_6_2026-06-01_18-45-57.jpg" alt="A facilitator guiding children through an ice breaker game" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="photo-slot rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-shadow cursor-pointer group border-2 border-teal-200">
+                <img src="images/photo_7_2026-06-01_18-45-57.jpg" alt="Children and volunteers during the Project CREATE activity proper" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="photo-slot rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-shadow cursor-pointer group border-2 border-rose-200">
+                <img src="images/photo_8_2026-06-01_18-45-57.jpg" alt="Youth volunteers mentoring children in reading comprehension" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+        </div>
+    </div>
+
+    <div class="wave-bottom">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,20 C480,60 960,0 1440,40 L1440,60 L0,60 Z" fill="#f0fdf4"/>
+        </svg>
+    </div>
+</section>
+
+<!-- ===================== VOLUNTEERS ===================== -->
+<section id="volunteers" class="py-24 pb-32 relative" style="background-color:#f0fdf4;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-14 fade-in">
+            <span class="section-eyebrow bg-blue-100 text-create-blue border-2 border-blue-200">
+                <i class="fa-solid fa-people-group"></i> The Team
+            </span>
+            <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-4">The People Behind It</h2>
+            <p class="text-xl text-gray-500 max-w-2xl mx-auto">Youth volunteers from across Ormoc City, united by one goal: empowering the next generation.</p>
+        </div>
+
+        <div class="max-w-2xl mx-auto mb-12 bg-white rounded-3xl p-8 shadow-md border-l-8 border-create-orange flex items-center gap-6 card-hover fade-in">
+            <div class="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center flex-shrink-0">
+                <i class="fa-solid fa-user-tie text-3xl text-create-orange"></i>
+            </div>
+            <div>
+                <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Overall Head</p>
+                <p class="font-display text-2xl font-bold text-gray-900">Kirchtz Catamisan</p>
+                <p class="text-gray-500 text-sm mt-1">VEST Club · Project CREATE, First Edition</p>
+            </div>
+        </div>
+
+        <!-- Volunteers: 2 cols mobile → 3 cols md → 5 cols lg. 5 cards = clean on md/lg, last card centered on mobile -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 max-w-5xl mx-auto justify-items-center">
+            <div class="vol-card bg-white rounded-2xl p-5 text-center shadow-sm border-2 border-orange-100 fade-in" data-delay="1">
+                <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center mx-auto mb-3">
+                    <img src="images/LOGOS/VEST CLUB.jpg" alt="VEST Club logo" class="w-full h-full rounded-full object-contain p-1">
+                </div>
+                <p class="font-display font-bold text-gray-800">VEST Club</p>
+                <p class="text-xs text-gray-400 mt-1">Lead Organizer</p>
+            </div>
+            <div class="vol-card bg-white rounded-2xl p-5 text-center shadow-sm border-2 border-blue-100 fade-in" data-delay="2">
+                <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-3">
+                    <i class="fa-solid fa-graduation-cap text-2xl text-create-blue"></i>
+                </div>
+                <p class="font-display font-bold text-gray-800">CCO</p>
+                <p class="text-xs text-gray-400 mt-1">City College of Ormoc</p>
+            </div>
+            <div class="vol-card bg-white rounded-2xl p-5 text-center shadow-sm border-2 border-green-100 fade-in" data-delay="3">
+                <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-3">
+                    <i class="fa-solid fa-graduation-cap text-2xl text-create-green"></i>
+                </div>
+                <p class="font-display font-bold text-gray-800">WLC</p>
+                <p class="text-xs text-gray-400 mt-1">Western Leyte College</p>
+            </div>
+            <div class="vol-card bg-white rounded-2xl p-5 text-center shadow-sm border-2 border-purple-100 fade-in" data-delay="4">
+                <div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mx-auto mb-3">
+                    <i class="fa-solid fa-graduation-cap text-2xl text-create-purple"></i>
+                </div>
+                <p class="font-display font-bold text-gray-800">STI</p>
+                <p class="text-xs text-gray-400 mt-1">STI College Ormoc</p>
+            </div>
+            <div class="vol-card bg-white rounded-2xl p-5 text-center shadow-sm border-2 border-red-100 fade-in" data-delay="5">
+                <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center mx-auto mb-3">
+                    <i class="fa-solid fa-graduation-cap text-2xl text-create-red"></i>
+                </div>
+                <p class="font-display font-bold text-gray-800">EVSU</p>
+                <p class="text-xs text-gray-400 mt-1">Eastern Visayas State University</p>
+            </div>
+        </div>
+        <!-- Registration callout — most important action for parents -->
+        <div class="mt-12 max-w-2xl mx-auto bg-white rounded-3xl p-7 shadow-md border-2 border-orange-200 fade-in">
+            <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center flex-shrink-0 mt-1">
+                    <i class="fa-solid fa-child-reaching text-2xl text-create-orange"></i>
+                </div>
+                <div>
+                    <h4 class="font-display text-xl font-bold text-gray-900 mb-1">Want to enroll your child?</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-3">
+                        Registration is <strong>free</strong> and open to children ages 8–13. Message us on Facebook or call/text us directly to sign up for the next edition.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="https://www.facebook.com/VESTClubOfficial/" target="_blank" rel="noopener noreferrer" class="btn-bounce inline-flex items-center gap-2 px-5 py-2.5 bg-create-blue text-white font-display font-semibold rounded-full text-sm shadow-md">
+                            <i class="fa-brands fa-facebook"></i> Message on Facebook
+                        </a>
+                        <a href="tel:09704513334" class="btn-bounce inline-flex items-center gap-2 px-5 py-2.5 bg-create-green text-white font-display font-semibold rounded-full text-sm shadow-md">
+                            <i class="fa-solid fa-phone"></i> 09704513334
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wave-bottom">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,40 C720,0 1080,60 1440,20 L1440,60 L0,60 Z" fill="#ffffff"/>
+        </svg>
+    </div>
+</section>
+<section id="partners" class="py-24 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="mb-14 fade-in">
+            <span class="section-eyebrow bg-yellow-100 text-yellow-700 border-2 border-yellow-200">
+                <i class="fa-solid fa-handshake"></i> Collaboration
+            </span>
+            <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-4">In Collaboration With</h2>
+            <p class="text-xl text-gray-500 max-w-2xl mx-auto">Made possible through the shared responsibility of our amazing partner organizations in Ormoc City.</p>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 max-w-4xl mx-auto fade-in">
+            <a href="https://www.facebook.com/profile.php?id=61584619143628" target="_blank" rel="noopener noreferrer" class="partner-card bg-amber-50 rounded-2xl p-5 flex flex-col items-center gap-3 border-2 border-amber-100 no-underline" data-delay="1">
+                <img src="images/LOGOS/City Youth Development Council.jpg" alt="City Youth Development Council logo" class="w-11 h-11 rounded-full object-contain bg-white p-1">
+                <p class="font-display font-bold text-gray-800 text-sm text-center">City Youth Development Council</p>
+                <span class="text-xs text-amber-600 flex items-center gap-1"><i class="fa-brands fa-facebook text-xs"></i> Visit page</span>
+            </a>
+            <a href="https://www.facebook.com/OrmocCityYDO" target="_blank" rel="noopener noreferrer" class="partner-card bg-green-50 rounded-2xl p-5 flex flex-col items-center gap-3 border-2 border-green-100 no-underline" data-delay="2">
+                <img src="images/LOGOS/City Youth Development Office.jpg" alt="City Youth Development Office logo" class="w-11 h-11 rounded-full object-contain bg-white p-1">
+                <p class="font-display font-bold text-gray-800 text-sm text-center">City Youth Development Office</p>
+                <span class="text-xs text-green-600 flex items-center gap-1"><i class="fa-brands fa-facebook text-xs"></i> Visit page</span>
+            </a>
+            <a href="https://www.facebook.com/OrmocVMCO?__tn__=-UC*F" target="_blank" rel="noopener noreferrer" class="partner-card bg-purple-50 rounded-2xl p-5 flex flex-col items-center gap-3 border-2 border-purple-100 no-underline" data-delay="3">
+                <img src="images/LOGOS/Volunteer Management & Coordination Office.jpg" alt="VMCO logo" class="w-11 h-11 rounded-full object-contain bg-white p-1">
+                <p class="font-display font-bold text-gray-800 text-sm text-center">Volunteer Management Coordination Office (VMCO)</p>
+                <span class="text-xs text-purple-600 flex items-center gap-1"><i class="fa-brands fa-facebook text-xs"></i> Visit page</span>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="partner-card bg-yellow-50 rounded-2xl p-5 flex flex-col items-center gap-3 border-2 border-yellow-100 no-underline" data-delay="4">
+                <div class="w-11 h-11 rounded-full bg-yellow-100 flex items-center justify-center">
+                    <i class="fa-solid fa-people-group text-xl text-create-yellow"></i>
+                </div>
+                <p class="font-display font-bold text-gray-800 text-sm text-center">Sangguniang Kabataan Federation</p>
+                <span class="text-xs text-yellow-600 flex items-center gap-1"><i class="fa-brands fa-facebook text-xs"></i> Visit page</span>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="partner-card bg-orange-50 rounded-2xl p-5 flex flex-col items-center gap-3 border-2 border-orange-100 no-underline" data-delay="5">
+                <div class="w-11 h-11 rounded-full bg-orange-100 flex items-center justify-center">
+                    <i class="fa-solid fa-star text-xl text-create-orange"></i>
+                </div>
+                <p class="font-display font-bold text-gray-800 text-sm text-center">SK of Barangay Tambulilid</p>
+                <span class="text-xs text-orange-600 flex items-center gap-1"><i class="fa-brands fa-facebook text-xs"></i> Visit page</span>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="partner-card bg-red-50 rounded-2xl p-5 flex flex-col items-center gap-3 border-2 border-red-100 no-underline" data-delay="6">
+                <div class="w-11 h-11 rounded-full bg-red-100 flex items-center justify-center">
+                    <i class="fa-solid fa-house-chimney text-xl text-create-red"></i>
+                </div>
+                <p class="font-display font-bold text-gray-800 text-sm text-center">Sangguniang Barangay of Barangay Tambulilid</p>
+                <span class="text-xs text-red-600 flex items-center gap-1"><i class="fa-brands fa-facebook text-xs"></i> Visit page</span>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="partner-card bg-teal-50 rounded-2xl p-5 flex flex-col items-center gap-3 border-2 border-teal-100 no-underline" data-delay="5">
+                <div class="w-11 h-11 rounded-full bg-teal-100 flex items-center justify-center">
+                    <i class="fa-solid fa-award text-xl text-teal-600"></i>
+                </div>
+                <p class="font-display font-bold text-gray-800 text-sm text-center">Ormoc City Academic Scholars Association (OCASA)</p>
+                <span class="text-xs text-teal-600 flex items-center gap-1"><i class="fa-brands fa-facebook text-xs"></i> Visit page</span>
+            </a>
+            <a href="https://www.facebook.com/LMSCOfficial" target="_blank" rel="noopener noreferrer" class="partner-card bg-blue-50 rounded-2xl p-5 flex flex-col items-center gap-3 border-2 border-blue-100 no-underline" data-delay="6">
+                <img src="images/LOGOS/Linao Multimedia Society Club (LMSC).jpg" alt="LMSC logo" class="w-11 h-11 rounded-full object-contain bg-white p-1">
+                <p class="font-display font-bold text-gray-800 text-sm text-center">Linao Multimedia Society Club (LMSC)</p>
+                <span class="text-xs text-blue-600 flex items-center gap-1"><i class="fa-brands fa-facebook text-xs"></i> Visit page</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== NEXT EDITION ===================== -->
+<section id="next" class="py-24 relative overflow-hidden" style="background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e3a5f 100%);">
+    <span class="deco float-a text-yellow-400 opacity-10" style="top:10%;left:5%;font-size:3rem;"   aria-hidden="true"><i class="fa-solid fa-star"></i></span>
+    <span class="deco float-b text-orange-400 opacity-10" style="top:20%;right:5%;font-size:2.5rem;" aria-hidden="true"><i class="fa-solid fa-rocket"></i></span>
+    <span class="deco float-c text-blue-400 opacity-10"   style="bottom:15%;left:8%;font-size:2.5rem;" aria-hidden="true"><i class="fa-solid fa-book-open"></i></span>
+    <span class="deco float-a text-purple-400 opacity-10" style="bottom:20%;right:6%;font-size:3rem;" aria-hidden="true"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <div class="inline-flex items-center gap-2 py-1.5 px-5 rounded-full bg-white/10 text-white font-display font-semibold text-sm mb-8 border border-white/20 fade-in">
+            <span class="relative flex h-2.5 w-2.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-orange-400"></span>
+            </span>
+            Coming Soon
+        </div>
+
+        <h2 class="font-display text-4xl md:text-5xl font-bold mb-6 text-white fade-in">
+            The Next Edition of <span class="gradient-text">Project CREATE</span> is Coming
+        </h2>
+        <p class="text-xl text-indigo-200 mb-4 leading-relaxed fade-in">
+            The first run proved that youth-led literacy works. We're planning to bring Project CREATE to more children, more barangays, and more young volunteers across Ormoc City.
+        </p>
+        <p class="text-indigo-300 mb-10 fade-in">
+            Dates and location for the next edition are being finalized. Stay connected with VEST Club for announcements.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-4 mb-14 fade-in">
+            <a href="https://www.facebook.com/VESTClubOfficial/" target="_blank" rel="noopener noreferrer" class="btn-bounce inline-flex items-center gap-2 px-8 py-4 bg-create-orange text-white font-display font-bold rounded-full shadow-lg">
+                <i class="fa-brands fa-facebook"></i> Follow VEST Club
+            </a>
+            <a href="mailto:vestclub2018@gmail.com?subject=Inquiry%20-%20Project%20CREATE" class="btn-bounce inline-flex items-center gap-2 px-8 py-4 bg-white/10 text-white font-display font-bold rounded-full border border-white/25">
+                <i class="fa-solid fa-envelope"></i> Get in Touch
+            </a>
+        </div>
+
+        <div class="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-10 max-w-2xl mx-auto fade-in">
+            <div class="w-14 h-14 rounded-full bg-yellow-400/20 flex items-center justify-center mx-auto mb-4">
+                <i class="fa-solid fa-people-carry-box text-2xl text-create-yellow"></i>
+            </div>
+            <h3 class="font-display text-2xl font-bold mb-3 text-white">Want to Volunteer?</h3>
+            <p class="text-indigo-200 mb-6 leading-relaxed">
+                Whether you're from CCO, WLC, STI, EVSU, or any other organization — if you believe in youth-led literacy, we want you on the team!
+            </p>
+            <a href="mailto:vestclub2018@gmail.com?subject=Volunteer%20Interest%20-%20Project%20CREATE" class="btn-bounce inline-flex items-center gap-2 px-7 py-3.5 bg-create-yellow text-gray-900 font-display font-bold rounded-full shadow-lg">
+                Express Your Interest <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="text-white pt-16 pb-10 relative overflow-hidden" style="background-color:#1c1917;">
+    <div class="absolute top-0 left-0 right-0 h-1" style="background: linear-gradient(to right, #ef4444, #f97316, #eab308, #22c55e, #3b82f6, #a855f7);"></div>
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-32 bg-orange-500 opacity-[0.04] blur-3xl rounded-full pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 text-center md:text-left mb-12">
+
+            <div class="flex flex-col items-center md:items-start fade-in">
+                <div class="flex items-center gap-3 mb-4">
+                    <img src="images/logo.png" alt="Project CREATE Logo" class="w-11 h-11 object-contain shadow-lg rounded-full bg-white border-2 border-orange-100 p-0.5">
+                    <span class="font-display font-bold text-2xl tracking-wide gradient-text">Project CREATE</span>
+                </div>
+                <p class="text-gray-400 text-sm max-w-xs leading-relaxed mb-3">
+                    A community literacy initiative by VEST Club. Empowering the next generation, one page at a time.
+                </p>
+                <p class="text-gray-500 text-xs italic">For the Youth, By the Youth, With the Youth.</p>
+            </div>
+
+            <div class="flex flex-col items-center md:items-start fade-in" data-delay="2">
+                <h4 class="font-display font-bold text-base mb-5 text-gray-200 uppercase tracking-wider">Quick Links</h4>
+                <ul class="space-y-2.5 text-gray-400 text-sm">
+                    <li><a href="#about"      class="hover:text-create-orange transition-colors flex items-center gap-2 justify-center md:justify-start"><i class="fa-solid fa-chevron-right text-xs text-create-orange/50"></i> About the Project</a></li>
+                    <li><a href="#impact"     class="hover:text-create-orange transition-colors flex items-center gap-2 justify-center md:justify-start"><i class="fa-solid fa-chevron-right text-xs text-create-orange/50"></i> Impact & Schedule</a></li>
+                    <li><a href="#gallery"    class="hover:text-create-orange transition-colors flex items-center gap-2 justify-center md:justify-start"><i class="fa-solid fa-chevron-right text-xs text-create-orange/50"></i> Photo Gallery</a></li>
+                    <li><a href="#volunteers" class="hover:text-create-orange transition-colors flex items-center gap-2 justify-center md:justify-start"><i class="fa-solid fa-chevron-right text-xs text-create-orange/50"></i> Our Volunteers</a></li>
+                    <li><a href="#partners"   class="hover:text-create-orange transition-colors flex items-center gap-2 justify-center md:justify-start"><i class="fa-solid fa-chevron-right text-xs text-create-orange/50"></i> Partner Organizations</a></li>
+                    <li><a href="#next"       class="hover:text-create-orange transition-colors flex items-center gap-2 justify-center md:justify-start"><i class="fa-solid fa-chevron-right text-xs text-create-orange/50"></i> Next Edition</a></li>
+                </ul>
+            </div>
+
+            <div class="flex flex-col items-center md:items-start fade-in" data-delay="4">
+                <h4 class="font-display font-bold text-base mb-5 text-gray-200 uppercase tracking-wider">Contact Us</h4>
+                <ul class="space-y-3 text-gray-400 text-sm">
+                    <li class="flex items-center gap-3 justify-center md:justify-start">
+                        <div class="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fa-brands fa-facebook text-sm text-blue-400"></i>
+                        </div>
+                        <a href="https://www.facebook.com/VESTClubOfficial/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">VEST Club on Facebook</a>
+                    </li>
+                    <li class="flex items-center gap-3 justify-center md:justify-start">
+                        <div class="w-8 h-8 rounded-full bg-red-500/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-envelope text-sm text-red-400"></i>
+                        </div>
+                        <a href="mailto:vestclub2018@gmail.com" class="hover:text-white transition-colors">vestclub2018@gmail.com</a>
+                    </li>
+                    <li class="flex items-center gap-3 justify-center md:justify-start">
+                        <div class="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fa-brands fa-whatsapp text-sm text-green-400"></i>
+                        </div>
+                        <a href="tel:09704513334" class="hover:text-white transition-colors">09704513334</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-5">
+            <p class="text-sm text-gray-500">&copy; 2026 Project CREATE &amp; VEST Club. All rights reserved.</p>
+            <div class="flex flex-wrap justify-center gap-2">
+                <span class="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-400 hover:border-create-orange hover:text-create-orange transition-colors cursor-default">#ProjectCREATE</span>
+                <span class="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-400 hover:border-create-orange hover:text-create-orange transition-colors cursor-default">#LiteracyMatters</span>
+                <span class="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-400 hover:border-create-orange hover:text-create-orange transition-colors cursor-default">#YouthEmpowerment</span>
+                <span class="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-400 hover:border-create-orange hover:text-create-orange transition-colors cursor-default">#OrmocCity</span>
+                <span class="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-400 hover:border-create-orange hover:text-create-orange transition-colors cursor-default">#VESTClub</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script type="module" src="assets/js/main.js"></script>
+<button id="back-to-top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<!-- Section indicator pill -->
+<div id="section-indicator" aria-hidden="true"></div>
+
+<!-- Lightbox -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button id="lightbox-close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <button id="lightbox-prev"  aria-label="Previous photo"><i class="fa-solid fa-chevron-left"></i></button>
+    <img id="lightbox-img" src="" alt="">
+    <p id="lightbox-caption"></p>
+    <button id="lightbox-next"  aria-label="Next photo"><i class="fa-solid fa-chevron-right"></i></button>
+</div>
+
+</body>
+</html>
